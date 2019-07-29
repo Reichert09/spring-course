@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.springcourse.enums.Role;
 
 import lombok.AllArgsConstructor;
@@ -81,10 +83,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	@JsonIgnore
 	public String getPassword() {
 		return password;
 	}
 
+	@JsonProperty
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -97,6 +101,7 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
+	@JsonIgnore
 	public List<Request> getRequests() {
 		return requests;
 	}
@@ -105,6 +110,7 @@ public class User implements Serializable {
 		this.requests = requests;
 	}
 
+	@JsonIgnore
 	public List<RequestStage> getStages() {
 		return stages;
 	}
