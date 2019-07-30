@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.springcourse.enums.RequestState;
 
 import lombok.AllArgsConstructor;
@@ -111,6 +112,7 @@ public class Request implements Serializable {
 		this.owner = owner;
 	}
 
+	@JsonIgnore
 	public List<RequestStage> getStages() {
 		return stages;
 	}

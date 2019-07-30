@@ -33,14 +33,14 @@ public class UserResource {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<User> update(@PathVariable(name ="id") Long id, User user) {
+	public ResponseEntity<User> update(@PathVariable(name = "id") Long id, @RequestBody User user) {
 		user.setId(id);
 		User updatedUser = userService.update(user);
 		return ResponseEntity.ok(updatedUser);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<User> getById(@PathVariable(name="id") Long id) {
+	public ResponseEntity<User> getById(@PathVariable(name = "id") Long id) {
 		User user = userService.getById(id);
 		return ResponseEntity.ok(user);
 	}
