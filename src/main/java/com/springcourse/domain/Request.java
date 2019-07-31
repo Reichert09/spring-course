@@ -64,6 +64,19 @@ public class Request implements Serializable {
 	@OneToMany(mappedBy = "request")
 	private List<RequestStage> stages = new ArrayList<RequestStage>();
 
+	
+	public Request(Long id, String subject, String description, Date creationDate, RequestState state, User owner,
+			List<RequestStage> stages) {
+		super();
+		this.id = id;
+		this.subject = subject;
+		this.description = description;
+		this.creationDate = creationDate;
+		this.state = state;
+		this.owner = owner;
+		this.stages = stages;
+	}
+
 	public Long getId() {
 		return id;
 	}
