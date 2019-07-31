@@ -58,6 +58,22 @@ public class RequestStage implements Serializable {
 	@JoinColumn(name = "owner_id", nullable = false)
 	private User owner;
 
+	
+	public RequestStage() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public RequestStage(Long id, String description, Date realizationDate, RequestState state, Request request,
+			User owner) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.realizationDate = realizationDate;
+		this.state = state;
+		this.request = request;
+		this.owner = owner;
+	}
+
 	public Long getId() {
 		return id;
 	}

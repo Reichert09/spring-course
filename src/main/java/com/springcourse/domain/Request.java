@@ -64,6 +64,9 @@ public class Request implements Serializable {
 	@OneToMany(mappedBy = "request")
 	private List<RequestStage> stages = new ArrayList<RequestStage>();
 
+	public Request() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Request(Long id, String subject, String description, Date creationDate, RequestState state, User owner,
 			List<RequestStage> stages) {
