@@ -1,8 +1,14 @@
 package com.springcourse.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class UserLogindto {
 
+	@Email(message = "Invalid email address")
 	private String email;
+	
+	@NotBlank(message = "password is required")
 	private String password;
 	
 	public String getEmail() {

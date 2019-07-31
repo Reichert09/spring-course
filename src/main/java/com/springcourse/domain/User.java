@@ -49,7 +49,7 @@ public class User implements Serializable {
 	@Column(length = 100, nullable = false)
 	private String password;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 20, nullable = false, updatable = false)
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	
@@ -58,6 +58,24 @@ public class User implements Serializable {
 	
 	@OneToMany(mappedBy = "owner")
 	private List<RequestStage> stages = new ArrayList<RequestStage>();
+
+	
+	
+	public User(Long id, String name, String email, String password, Role role, List<Request> requests,
+			List<RequestStage> stages) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.requests = requests;
+		this.stages = stages;
+	}
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;
